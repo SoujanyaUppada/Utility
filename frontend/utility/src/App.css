@@ -1,0 +1,213 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #3ed6b2 0%, #d22461 100%);
+  min-height: 100vh;
+  color: #2702f3;
+  padding: 2rem 1rem;
+}
+
+.App {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+.App h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(to right, #fff, #a8edea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.tabs button {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgb(0, 0, 0);
+  padding: 0.8rem 1.6rem;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.tabs button:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.tabs button.active {
+  background: linear-gradient(45deg, #ff6b6b, #feca57);
+  color: white;
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+  transform: translateY(-3px);
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 1.8rem;
+  margin: 1.5rem auto;
+  max-width: 500px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.2rem;
+  color: #dc0a0a;
+}
+
+
+input, select {
+  width: 100%;
+  padding: 0.9rem 1.2rem;
+  margin: 0.8rem 0;
+  border: none;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.2);
+  color: rgb(139, 27, 74);
+  font-weight: 900;
+  font-size: 1rem;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+}
+
+input::placeholder {
+  color: rgba(138, 4, 4, 0.7);
+  font-weight: 900;
+}
+
+input:focus, select:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+}
+
+
+button {
+  background: linear-gradient(45deg, #4facfe, #00f2fe);
+  color: rgb(11, 11, 11);
+  font-weight :900;
+  border: none;
+  padding: 0.9rem 1.8rem;
+  margin: 0.8rem 0.4rem 0;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(79, 172, 254, 0.4);
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(79, 172, 254, 0.6);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+.result {
+  margin-top: 1.2rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  backdrop-filter: blur(5px);
+  font-size: 1.1rem;
+}
+
+.result p {
+  margin: 0.5rem 0;
+  font-weight: 500;
+}
+
+.result strong {
+  color: #a8edea;
+}
+
+
+blockquote {
+  margin: 1.5rem 0;
+  padding: 1.2rem;
+  background: rgba(33, 22, 22, 0.1);
+  border-left: 4px solid #a8edea;
+  border-radius: 8px;
+  font-style: italic;
+  font-size: 1.1rem;
+}
+
+blockquote p {
+  margin-bottom: 0.5rem;
+}
+
+blockquote footer {
+  font-weight: 600;
+  color: #ffdd59;
+  font-style: normal;
+  font-size: 0.95rem;
+}
+
+
+.error {
+  color: #ff6b6b;
+  background: rgba(255, 107, 107, 0.15);
+  padding: 0.8rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+  font-weight: 500;
+}
+
+
+.loading {
+  color: #a8edea;
+  font-style: italic;
+}
+
+
+@media (max-width: 600px) {
+  .App h1 {
+    font-size: 2.2rem;
+  }
+
+  .card {
+    padding: 1.4rem;
+    margin: 1rem auto;
+  }
+
+  .tabs button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
