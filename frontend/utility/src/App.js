@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 
-const API = process.env.REACT_APP_BACKEND_URL || "http://localhost:5000/api";
+const API = process.env.REACT_APP_BACKEND_URL || "https://utility-lx8c.vercel.app";
 
 function Weather() {
   const [city, setCity] = useState("");
@@ -12,7 +12,7 @@ function Weather() {
   const fetch = async () => {
     setLoad(true); setErr(""); setRes(null);
     try {
-      const r = await window.fetch(`${API}/weather/${city}`);
+      const r = await window.fetch(`${API}/api/weather/${city}`);
       const j = await r.json();
       if (!r.ok) throw new Error(j.error || "Error");
       setRes(j);
@@ -48,7 +48,7 @@ function Converter() {
   const fetch = async () => {
     setLoad(true); setErr(""); setRes(null);
     try {
-      const r = await window.fetch(`${API}/convert/${amt}/${cur}`);
+      const r = await window.fetch(`${API}/api/convert/${amt}/${cur}`);
       const j = await r.json();
       if (!r.ok) throw new Error(j.error || "Error");
       setRes(j);
@@ -84,7 +84,7 @@ function Quote() {
   const fetch = async () => {
     setLoad(true); setErr(""); setRes(null);
     try {
-      const r = await window.fetch(`${API}/quote`);
+      const r = await window.fetch(`${API}/api/quote`);
       const j = await r.json();
       if (!r.ok) throw new Error(j.error || "Error");
       setRes(j);
